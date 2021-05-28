@@ -1,18 +1,7 @@
-class CatlogModel{
-  
-static final items = [
-  Items(
-    id: 1,
-    productName: "iPhone 12 Pro",
-    descreption: "Apple iPhone 12 Generation",
-    color: "#33505a",
-    price: 99999,
-    image:
-        "https://www.reliancedigital.in/medias/Apple-12-Smartphones-491901533-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMTMwMTd8aW1hZ2UvanBlZ3xpbWFnZXMvaDM2L2g1OC85NDA3NzMxMTcxMzU4LmpwZ3w5NjBiYTIzZWE1Yjg5NjQzN2YyZTAxZjNhNGI2ODg0YzQ4NmZlMDZiN2EwYmVkYjlhZjA3OGIxNDZiNDEzNTc0",
-  ),
-];
-
+class CatlogModel {
+  static List<Items> items;
 }
+
 class Items {
   Items({
     this.id,
@@ -28,4 +17,24 @@ class Items {
   final String color;
   final num price;
   final String image;
+
+  factory Items.fromMap(Map<String, dynamic> map) {
+    return Items(
+      id: map['id'],
+      productName: map['productName'],
+      descreption: map['descreption'],
+      color: map['color'],
+      price: map['price'],
+      image: map['image'],
+    );
+  }
+
+  toMap() => {
+        'id': id,
+        'productName': productName,
+        'descreption': descreption,
+        'color': color,
+        'price': price,
+        'image': image,
+      };
 }
