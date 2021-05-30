@@ -5,7 +5,7 @@
                "productName": "iPhone 12 Pro",
                "descreption": "Apple iPhone 12 Generation",
                "color": "#33505a",
-               "price": 99999,
+               "price": 999,
                "image": "https://www.reliancedigital.in/medias/Apple-12-Smartphones-491901533-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMTMwMTd8aW1hZ2UvanBlZ3xpbWFnZXMvaDM2L2g1OC85NDA3NzMxMTcxMzU4LmpwZ3w5NjBiYTIzZWE1Yjg5NjQzN2YyZTAxZjNhNGI2ODg0YzQ4NmZlMDZiN2EwYmVkYjlhZjA3OGIxNDZiNDEzNTc0"
           },
           {
@@ -13,8 +13,8 @@
                "productName": "One Plus",
                "descreption": "One Plus 8 T",
                "color": "#687db3",
-               "price": 54999,
-               "image": "https://images-na.ssl-images-amazon.com/images/I/51-QMzEE0HL._AC_SL1166_.jpg"
+               "price": 549,
+               "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAnyM1JN8ygTJ1L9IfP0bYnXv77iWg96mlXlpLf4T2BK7As0aSf_HN0dgBO7k&usqp=CAc"
           }
      ]
 }
