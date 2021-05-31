@@ -1,5 +1,4 @@
 import 'package:catlog/models/catlog.dart';
-import 'package:catlog/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -11,8 +10,10 @@ class HomeDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: Themes.creamColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent
+      ),
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -28,16 +29,18 @@ class HomeDetailsPage extends StatelessWidget {
                 height: 30.0,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
                       catalog.productName.text.bold.xl4
-                          .color(Themes.darkBluishColor)
+                          .color(context.accentColor)
                           .make(),
                       catalog.descreption.text.xl
                           .textStyle(context.captionStyle)
                           .make(),
                       10.heightBox,
+                      "Rebum justo erat at eirmod dolores et sanctus ea aliquyam elitr. Takimata justo elitr ipsum et at. Diam vero sed. "
+                    .text.textStyle(context.captionStyle).make().p16()
                     ],
                   ).py64(),
                 ),
@@ -47,7 +50,7 @@ class HomeDetailsPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -56,12 +59,12 @@ class HomeDetailsPage extends StatelessWidget {
             ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    Themes.darkBluishColor,
+                   context.theme.buttonColor,
                   ),
                   shape: MaterialStateProperty.all(StadiumBorder())),
               onPressed: () {},
-              child: "Buy".text.make(),
-            ).wh(100, 50),
+              child: "Add to Cart".text.make(),
+            ).wh(120, 50),
           ],
         ).p32(),
       ),

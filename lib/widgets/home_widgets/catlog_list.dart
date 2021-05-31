@@ -1,6 +1,5 @@
 import 'package:catlog/models/catlog.dart';
 import 'package:catlog/pages/home_details_page.dart';
-import 'package:catlog/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -49,7 +48,7 @@ class CatlogItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 catlog.productName.text.bold.lg
-                    .color(Themes.darkBluishColor)
+                    .color(context.accentColor)
                     .make(),
                 catlog.descreption.text.textStyle(context.captionStyle)
                 .make(),
@@ -62,11 +61,11 @@ class CatlogItem extends StatelessWidget {
                     ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(
-                            Themes.darkBluishColor,
+                            context.theme.buttonColor,
                           ),
-                          shape: MaterialStateProperty.all(StadiumBorder())),
+                          shape: MaterialStateProperty.all(StadiumBorder(),),),
                       onPressed: () {},
-                      child: "Buy".text.make(),
+                      child: "Add to Cart".text.make(),
                     ),
                   ],
                 ).pOnly(right: 8.0),
@@ -75,6 +74,6 @@ class CatlogItem extends StatelessWidget {
           ),
         ],
       ),
-    ).white.rounded.square(150).make().py(16);
+    ).color(context.cardColor).rounded.square(150).make().py(16);
   }
 }

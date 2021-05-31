@@ -1,9 +1,10 @@
 import 'dart:convert';
 
 import 'package:catlog/models/catlog.dart';
+import 'package:catlog/utils/routs.dart';
 import 'package:catlog/widgets/home_widgets/catlog_header.dart';
 import 'package:catlog/widgets/home_widgets/catlog_list.dart';
-import 'package:catlog/widgets/themes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Themes.creamColor,
+      backgroundColor: context.cardColor,
       body: SafeArea(
         child: Container(
           padding: Vx.m32,
@@ -46,17 +47,18 @@ class _HomePageState extends State<HomePage> {
                 CatlogList().py16().expand()
               else
                 CircularProgressIndicator().centered().expand(),
-                
             ],
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        child: Icon(
+          CupertinoIcons.cart,
+          color: Colors.white,
+        ),
+        backgroundColor: context.theme.buttonColor,
+      ),
     );
   }
 }
-
-
-
-
-
-
