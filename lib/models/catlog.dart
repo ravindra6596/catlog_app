@@ -1,5 +1,13 @@
 class CatlogModel {
   static List<Items> items;
+
+  // for cart page find by ID
+   Items getById(int id) => items.firstWhere(
+        (element) => element.id == id,
+        orElse: null,
+      );
+  // get item by position
+   Items getByPosition(int pos) => items[pos];
 }
 
 class Items {

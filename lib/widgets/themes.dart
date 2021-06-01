@@ -20,7 +20,7 @@ class Themes {
         ),
       );
   static ThemeData darkTheme(BuildContext context) => ThemeData(
-    brightness: Brightness.dark,
+        brightness: Brightness.dark,
         fontFamily: GoogleFonts.lato().fontFamily,
         cardColor: Colors.black,
         canvasColor: darkCreamColor,
@@ -32,7 +32,11 @@ class Themes {
             color: Colors.black,
           ),
           elevation: 0.0,
-          textTheme: Theme.of(context).textTheme,
+          textTheme: Theme.of(context).textTheme.copyWith(
+                headline6: context.textTheme.headline6.copyWith(
+                  color: Colors.white,
+                ),
+              ),
         ),
       );
 

@@ -40,7 +40,7 @@ class HomeDetailsPage extends StatelessWidget {
                           .make(),
                       10.heightBox,
                       "Rebum justo erat at eirmod dolores et sanctus ea aliquyam elitr. Takimata justo elitr ipsum et at. Diam vero sed. "
-                    .text.textStyle(context.captionStyle).make().p16()
+                    .text.textStyle(context.captionStyle,).xl.make().p16()
                     ],
                   ).py64(),
                 ),
