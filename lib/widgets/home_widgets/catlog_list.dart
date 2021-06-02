@@ -1,4 +1,3 @@
-import 'package:catlog/models/cart.dart';
 import 'package:catlog/models/catlog.dart';
 import 'package:catlog/pages/home_details_page.dart';
 import 'package:flutter/material.dart';

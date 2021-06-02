@@ -1,10 +1,8 @@
+import 'package:catlog/core/store.dart';
 import 'package:catlog/models/catlog.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class CartModel {
-  static final cartModel = CartModel._internal();
-  CartModel._internal();
-  factory CartModel() => cartModel;
-
   // Catlog fields
   CatlogModel _catlog;
   // collection of id's stored ids of each item
@@ -29,13 +27,27 @@ class CartModel {
         0,
         (total, current) => total + current.price,
       );
-  // add item
-  void addItem(Items items) {
-    _itemIds.add(items.id);
-  }
 
-  // remove item
-  void removeItem(Items items) {
-    _itemIds.remove(items.id);
+}
+
+// add mutation
+class AddMutaion extends VxMutation<MyStore> {
+  final Items items;
+
+  AddMutaion(this.items);
+  @override
+  perform() {
+    store.cart._itemIds.add(items.id);
+  }
+}
+
+// remove mutation
+class RemoveMutaion extends VxMutation<MyStore> {
+  final Items items;
+
+  RemoveMutaion(this.items);
+  @override
+  perform() {
+    store.cart._itemIds.remove(items.id);
   }
 }

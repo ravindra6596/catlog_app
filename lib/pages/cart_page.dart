@@ -1,3 +1,4 @@
+import 'package:catlog/core/store.dart';
 import 'package:catlog/models/cart.dart';
 import 'package:catlog/widgets/themes.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,8 @@ class CartPage extends StatelessWidget {
 }
 
 class CartTotal extends StatelessWidget {
-  final _cart = CartModel();
+  final CartModel _cart = (VxState.store as MyStore).cart;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -32,11 +34,16 @@ class CartTotal extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          '\$${_cart.totalPrice}'
-              .text
-              .xl5
-              .color(context.theme.accentColor)
-              .make(),
+          VxBuilder(
+            mutations: {RemoveMutaion},
+            builder: (context, store, VxStatus status) {
+              return '\$${_cart.totalPrice}'
+                  .text
+                  .xl5
+                  .color(context.theme.accentColor)
+                  .make();
+            },
+          ),
           30.widthBox,
           ElevatedButton(
             style: ButtonStyle(
@@ -55,15 +62,12 @@ class CartTotal extends StatelessWidget {
   }
 }
 
-class CartList extends StatefulWidget {
-  @override
-  _CartListState createState() => _CartListState();
-}
-
-class _CartListState extends State<CartList> {
-  final _cart = CartModel();
+class CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutaion]);
+    final CartModel _cart = (VxState.store as MyStore).cart;
+
     return _cart.items.isEmpty
         ? 'Nothing To Show'.text.xl4.makeCentered()
         : ListView.builder(
@@ -72,12 +76,7 @@ class _CartListState extends State<CartList> {
               leading: Icon(Icons.done),
               trailing: IconButton(
                 icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  _cart.removeItem(_cart.items[index]);
-                  setState(() {
-                    
-                  });
-                },
+                onPressed: () => RemoveMutaion(_cart.items[index]),
               ),
               title: _cart.items[index].productName.text.make(),
             ),
