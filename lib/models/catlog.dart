@@ -1,4 +1,9 @@
 class CatlogModel {
+
+static final catModel = CatlogModel._internal();
+  CatlogModel._internal();
+  factory CatlogModel() => catModel;
+
   static List<Items> items;
 
   // for cart page find by ID

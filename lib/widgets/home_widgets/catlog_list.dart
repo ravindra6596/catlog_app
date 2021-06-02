@@ -1,8 +1,10 @@
+import 'package:catlog/models/cart.dart';
 import 'package:catlog/models/catlog.dart';
 import 'package:catlog/pages/home_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import 'add_to_cart.dart';
 import 'catlog_image.dart';
 
 class CatlogList extends StatelessWidget {
@@ -14,13 +16,12 @@ class CatlogList extends StatelessWidget {
       itemBuilder: (context, index) {
         final catlog = CatlogModel.items[index];
         return InkWell(
-          onTap: () =>
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeDetailsPage(catalog: catlog),
-              ),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeDetailsPage(catalog: catlog),
             ),
+          ),
           child: CatlogItem(catlog: catlog),
         );
       },
@@ -40,8 +41,8 @@ class CatlogItem extends StatelessWidget {
       child: Row(
         children: [
           Hero(
-            tag: (catlog.id.toString()),
-            child: CatlogImage(image: catlog.image)),
+              tag: (catlog.id.toString()),
+              child: CatlogImage(image: catlog.image)),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,23 +51,14 @@ class CatlogItem extends StatelessWidget {
                 catlog.productName.text.bold.lg
                     .color(context.accentColor)
                     .make(),
-                catlog.descreption.text.textStyle(context.captionStyle)
-                .make(),
+                catlog.descreption.text.textStyle(context.captionStyle).make(),
                 10.heightBox,
                 ButtonBar(
                   alignment: MainAxisAlignment.spaceBetween,
                   buttonPadding: EdgeInsets.zero,
                   children: [
                     '\$${catlog.price}'.text.bold.xl.make(),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            context.theme.buttonColor,
-                          ),
-                          shape: MaterialStateProperty.all(StadiumBorder(),),),
-                      onPressed: () {},
-                      child: "Add to Cart".text.make(),
-                    ),
+                    AddToCart(catlog: catlog),
                   ],
                 ).pOnly(right: 8.0),
               ],
@@ -77,3 +69,4 @@ class CatlogItem extends StatelessWidget {
     ).color(context.cardColor).rounded.square(150).make().py(16);
   }
 }
+

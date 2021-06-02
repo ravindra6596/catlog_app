@@ -1,6 +1,10 @@
 import 'package:catlog/models/catlog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+  CartModel._internal();
+  factory CartModel() => cartModel;
+
   // Catlog fields
   CatlogModel _catlog;
   // collection of id's stored ids of each item
