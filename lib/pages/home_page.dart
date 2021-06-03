@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
 
   loadJSONData() async {
     await Future.delayed(Duration(seconds: 2));
-   // for own static json file
+   // for own static json file online use for data
     final catlogJSON = await rootBundle.loadString('assets/files/catlog.json');
     // final jsonResponse = await http.get(Uri.parse(url));
     // final catlogJson = jsonResponse.body;
