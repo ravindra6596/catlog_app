@@ -11,9 +11,7 @@ class HomeDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent
-      ),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
@@ -41,7 +39,13 @@ class HomeDetailsPage extends StatelessWidget {
                           .make(),
                       10.heightBox,
                       "Rebum justo erat at eirmod dolores et sanctus ea aliquyam elitr. Takimata justo elitr ipsum et at. Diam vero sed. "
-                    .text.textStyle(context.captionStyle,).xl.make().p16()
+                          .text
+                          .textStyle(
+                            context.captionStyle,
+                          )
+                          .xl
+                          .make()
+                          .p16(),
                     ],
                   ).py64(),
                 ),
@@ -57,7 +61,9 @@ class HomeDetailsPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             '\$${catalog.price}'.text.bold.xl4.red800.make(),
-            AddToCart(catlog: catalog,).wh(120, 50),
+            AddToCart(
+              catlog: catalog,
+            ).wh(120, 50),
           ],
         ).p32(),
       ),

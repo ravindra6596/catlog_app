@@ -23,6 +23,62 @@
                "color": "#687db3",
                "price": 549,
                "image": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png"
+          },
+          {
+               "id": 4,
+               "productName": "Asus Laptop",
+               "descreption": "Mac Book Air Pro",
+               "color": "#687db3",
+               "price": 549,
+               "image": "https://www.reliancedigital.in/medias/Asus-KA521TS-Laptops-491996501-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w1OTM3NjN8aW1hZ2UvanBlZ3xpbWFnZXMvaGQ0L2hjYi85NTI4MTk4OTg3ODA2LmpwZ3w3MTI4NDY1ZDkzODM1NDZlNmIwZjM3M2RjMzFlMTY2YWRkZWJhMWVjYzliMmIwOTRjN2QyN2E5Y2VkYzYxMWIz"
+          },
+          {
+               "id": 5,
+               "productName": "Inspiron 14 Laptop",
+               "descreption": "11th Generation Intel ® Core ™ i5-1135G7 Processor (8MB Cache, up to 4.2 GHz)",
+               "color": "#687db3",
+               "price": 1549,
+               "image": "https://i.dell.com/is/image/DellContent//content/dam/global-asset-library/Products/Notebooks/Inspiron/14_5402_non-touch/in5402nt_cnb_00055lf110_gy.psd?fmt=pjpg&pscan=auto&scl=1&hei=402&wid=688&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0&size=688,402"
+          },
+          {
+               "id": 6,
+               "productName": "UNISEX ADIDAS TRAINING BACKPACK",
+               "descreption": "Available in Collegiate Navy",
+               "color": "#687db3",
+               "price": 499,
+               "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRR4TIq1HSx70hFHmJO33urvl609aDY7VwSsqwZ9POKuY_wOz1F_pGtIbjdvn_o-PFPGrp4wEhlNA&usqp=CAc"
+          },
+          {
+               "id": 7,
+               "productName": "Scout 26T",
+               "descreption": "LEADER Scout 26T cycle is the perfect choice for your because of its high built quality and great reliability",
+               "color": "#687db3",
+               "price": 234,
+               "image": "https://cdn.shopify.com/s/files/1/0524/1346/4726/products/scout-26T-main-..jpg?v=1609739740"
+          },
+          {
+               "id": 8,
+               "productName": "BOAT Airdopes 131 - Wireless Earbuds",
+               "descreption": "Sleek. Comfortable. Stylish. And a Splash of Incredible Colours.",
+               "color": "#687db3",
+               "price": 154,
+               "image": "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/airdopes-131-blue_720x.png?v=1613457306"
+          },
+          {
+               "id": 9,
+               "productName": "MEN'S ADIDAS RUNNING FLUIDFLOW SHOES",
+               "descreption": "Available in Core Black, Grey Six and Onix",
+               "color": "#687db3",
+               "price": 59,
+               "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQDo6ioISYwyKyJtBN6grTmj_Trckt4sLJT_JoPvSKG0lF3-zDnGzI7s4_10LPpMlakzceEEv_SxA&usqp=CAc"
+          },
+          {
+               "id": 10,
+               "productName": "WOODLAND KHAKI CASUAL SANDALS",
+               "descreption": "Comfortable pair of comfort sandals",
+               "color": "#687db3",
+               "price": 49,
+               "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS-X_XETv0T8ZKFhL7yLyTqCDDMKLgJRDaLrGMGf0WBSx2oVp9wJjrtuQy-reWrga-tusM_rYStbw&usqp=CAc"
           }
      ]
 }
